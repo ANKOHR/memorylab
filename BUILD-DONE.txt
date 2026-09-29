@@ -1,0 +1,4 @@
+Pytest test count: 24 passed.
+Local commit hash: 6883aa3ee15eddda9331b446ec608287f1396727
+
+Summary: Built MemoryLab as a deterministic Python benchmark harness with six inspectable memory policies, synthetic scripted fixtures, event-based token, retrieval, success, and corruption metrics, and Markdown or HTML findings reports. Added a CLI, complete README with the honesty boundary and metric definitions, a 24-test pytest suite, and a generated findings report. All behavior uses deterministic rules on synthetic episodes only; there are no trained models, real agent memories, real retrieval systems, or embeddings.
