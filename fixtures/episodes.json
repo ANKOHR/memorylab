@@ -1,0 +1,196 @@
+{
+  "episodes": [
+    {
+      "control": true,
+      "description": "Two direct lookups that a perfect memory can answer.",
+      "events": [
+        {
+          "at": "t01",
+          "fact_id": "f001",
+          "object": "indigo",
+          "op": "set",
+          "relation": "favorite color",
+          "subject": "Ada",
+          "type": "fact"
+        },
+        {
+          "at": "t02",
+          "fact_id": "f002",
+          "object": "ochre",
+          "op": "set",
+          "relation": "favorite color",
+          "subject": "Bo",
+          "type": "fact"
+        },
+        {
+          "at": "t03",
+          "query_id": "q001",
+          "relation": "favorite color",
+          "subject": "Ada",
+          "target_fact_id": "f001",
+          "text": "Ada favorite color?",
+          "type": "query"
+        },
+        {
+          "at": "t04",
+          "query_id": "q002",
+          "relation": "favorite color",
+          "subject": "Bo",
+          "target_fact_id": "f002",
+          "text": "Bo favorite color?",
+          "type": "query"
+        }
+      ],
+      "id": "control_basics"
+    },
+    {
+      "control": false,
+      "description": "A corrected value is recalled, then an expired value is absent.",
+      "events": [
+        {
+          "at": "t01",
+          "fact_id": "f101",
+          "object": "silver",
+          "op": "set",
+          "relation": "access code",
+          "subject": "Lin",
+          "type": "fact"
+        },
+        {
+          "at": "t02",
+          "fact_id": "f102",
+          "object": "gold",
+          "op": "correct",
+          "relation": "access code",
+          "subject": "Lin",
+          "type": "fact"
+        },
+        {
+          "at": "t03",
+          "query_id": "q101",
+          "relation": "access code",
+          "subject": "Lin",
+          "target_fact_id": "f102",
+          "text": "Lin access code?",
+          "type": "query"
+        },
+        {
+          "at": "t04",
+          "fact_id": "f103",
+          "op": "expire",
+          "relation": "access code",
+          "subject": "Lin",
+          "type": "fact"
+        },
+        {
+          "at": "t05",
+          "query_id": "q102",
+          "relation": "access code",
+          "subject": "Lin",
+          "target_fact_id": null,
+          "text": "Lin access code now?",
+          "type": "query"
+        }
+      ],
+      "id": "correction_and_expiry"
+    },
+    {
+      "control": false,
+      "description": "A relation-only summary can attach Noah's value to Mira.",
+      "events": [
+        {
+          "at": "t01",
+          "fact_id": "f201",
+          "object": "North",
+          "op": "set",
+          "relation": "assigned to",
+          "subject": "Mira",
+          "type": "fact"
+        },
+        {
+          "at": "t02",
+          "fact_id": "f202",
+          "object": "South",
+          "op": "set",
+          "relation": "assigned to",
+          "subject": "Noah",
+          "type": "fact"
+        },
+        {
+          "at": "t03",
+          "query_id": "q201",
+          "relation": "assigned to",
+          "subject": "Mira",
+          "target_fact_id": "f201",
+          "text": "Mira assigned to?",
+          "type": "query"
+        }
+      ],
+      "id": "corruption_trap"
+    },
+    {
+      "control": false,
+      "description": "Repeated words and nearby facts exercise deterministic retrieval ranking.",
+      "events": [
+        {
+          "at": "t01",
+          "fact_id": "f301",
+          "object": "amber",
+          "op": "set",
+          "relation": "badge",
+          "subject": "Ivo",
+          "type": "fact"
+        },
+        {
+          "at": "t02",
+          "fact_id": "f302",
+          "object": "violet",
+          "op": "set",
+          "relation": "badge",
+          "subject": "Uma",
+          "type": "fact"
+        },
+        {
+          "at": "t03",
+          "fact_id": "f303",
+          "object": "amber",
+          "op": "set",
+          "relation": "badge",
+          "subject": "Kian",
+          "type": "fact"
+        },
+        {
+          "at": "t04",
+          "fact_id": "f304",
+          "object": "teal",
+          "op": "set",
+          "relation": "favorite color",
+          "subject": "Ivo",
+          "type": "fact"
+        },
+        {
+          "at": "t05",
+          "query_id": "q301",
+          "relation": "badge",
+          "subject": "Ivo",
+          "target_fact_id": "f301",
+          "text": "Ivo badge?",
+          "type": "query"
+        },
+        {
+          "at": "t06",
+          "query_id": "q302",
+          "relation": "badge",
+          "subject": "Kian",
+          "target_fact_id": "f303",
+          "text": "Kian badge?",
+          "type": "query"
+        }
+      ],
+      "id": "distractors"
+    }
+  ],
+  "label": "Synthetic fictional benchmark data. No real people or agents.",
+  "schema_version": 1,
+  "seed": 0
+}
